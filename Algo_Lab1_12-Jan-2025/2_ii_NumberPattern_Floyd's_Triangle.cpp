@@ -8,6 +8,8 @@
 
 
 
+
+
 #include <iostream>
 using namespace std;
 
@@ -18,11 +20,19 @@ int main(){
 
     cout << "Enter the N: ";
     cin >> numberN;
+    int k = 1;
+    for (int i = 1; i <= numberN; i++)
+    {
 
-    for (int i = 1; i <= numberN; i++){
+        for (int j = 1; j <= i; j++)
+        {
+            if((i + j) % 2 ==0){
+                cout << "0";
+            }
 
-        for (int j = 1; j <= i; j++){
-            cout << i;
+            else{
+                cout << "1";
+            }
         }
         cout << endl;
     }
