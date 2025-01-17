@@ -54,7 +54,7 @@ int main(){
 
                 }
         }
-        
+
         cout << "MatrixA + MatrixB = " << endl;
 
         for (int i = 0; i < row1; i++){
@@ -66,7 +66,7 @@ int main(){
     }
     }
     else{
-        cout << "ERROR!!! Number of Row or Cloumn for both Matrix is/are Different!" << endl;
+        cout << "ERROR!!! Number of Row or Cloumn for both Matrix are Different!" << endl;
     }
 
     

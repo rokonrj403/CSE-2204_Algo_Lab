@@ -42,20 +42,20 @@ int main(){
         }
     }
 
-    int matrixC[col1][row2];
+    int matrixC[row1][col1];
 
-    if (col1 == row2)
+    if (row1 == row2 && col1 == col2)
     {
 
         for (int i = 0; i < row1; i++){
             for (int j = 0; j< col1; j++){
 
-                matrixC[i][j] = matrixA[i][j] * matrixB[i][j];
+                matrixC[i][j] = matrixA[i][j] - matrixB[i][j];
 
                 }
         }
         
-        cout << "MatrixA * MatrixB = " << endl;
+        cout << "MatrixA - MatrixB = " << endl;
 
         for (int i = 0; i < row1; i++){
         for(int j = 0; j< col1; j++){
@@ -66,7 +66,7 @@ int main(){
     }
     }
     else{
-        cout << "ERROR!!! Number of Cloumn of MatrixA and Number of Rows of MatrixB are Different!" << endl;
+        cout << "ERROR!!! Number of Row or Cloumn for both Matrix are Different!" << endl;
     }
 
     
