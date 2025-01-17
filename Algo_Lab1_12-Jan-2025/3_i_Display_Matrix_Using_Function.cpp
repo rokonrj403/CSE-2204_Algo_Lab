@@ -1,3 +1,5 @@
+// To read a matrix of size m*n from the keyboard and display the same on the screen using the function
+
 #include <iostream>
 using namespace std;
 
