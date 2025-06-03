@@ -1,0 +1,131 @@
+import numpy as np
+
+# Defining matrix A with the coefficients
+A = np.array([
+    [3, -4, 5, -1],
+    [2, 3, -1, 10],
+    [7, 2, -5, 1],
+    [1, -1, 3, 7]
+], dtype=float)
+
+# Defining vector b with the right-hand side values
+b = np.array([6, 7, -10, 12], dtype=float)
+
+print("Matrix A:")
+print(A)
+
+print("\nVector b:")
+print(b)
+
+
+1b
+
+import numpy as np
+
+# Coefficient matrix A
+A = np.array([
+    [3, -4, 5, -1],
+    [2, 3, -1, 10],
+    [7, 2, -5, 1],
+    [1, -1, 3, 7]
+])
+
+# Right-hand side vector b
+b = np.array([6, 7, -10, 12])
+
+# Solve using numpy's built-in solver
+x = np.linalg.solve(A, b)
+
+print("Solution vector x:")
+print(x)
+
+
+1c
+
+import numpy as np
+
+# Coefficient matrix A
+A = np.array([
+    [3, -4, 5, -1],
+    [2, 3, -1, 10],
+    [7, 2, -5, 1],
+    [1, -1, 3, 7]
+], dtype=float)  # use float for division
+
+n = A.shape[0]
+
+# Gaussian Elimination to upper triangular form
+for i in range(n):
+    for j in range(i+1, n):
+        factor = A[j][i] / A[i][i]
+        A[j] = A[j] - factor * A[i]
+
+# Now A is upper triangular
+print("Upper triangular matrix A:")
+print(A)
+
+# Product of the diagonal entries (determinant)
+det = np.prod(np.diag(A))
+print("\nDeterminant of A:")
+print(det)
+
+
+2a
+
+import numpy as np
+
+# Initialize empty 3x3 matrix
+A = np.zeros((3, 3))
+
+# Fill the matrix using the formula A[j, k] = exp(-j * k^2)
+for j in range(1, 4):       # j = 1, 2, 3
+    for k in range(1, 4):   # k = 1, 2, 3
+        A[j-1, k-1] = np.exp(-j * k**2)  # adjust index (Python starts from 0)
+
+print("Matrix A:")
+print(A)
+
+
+2b
+
+import numpy as np
+
+# Assume A is already defined from 2(a)
+
+# Finding the inverse of A
+A_inv = np.linalg.inv(A)
+
+print("Inverse of A:")
+print(A_inv)
+
+# Verify: A * A_inv should give Identity matrix
+identity_check = np.dot(A, A_inv)
+
+print("\nA multiplied by A_inv (should be Identity):")
+print(identity_check)
+
+
+2c
+
+import numpy as np
+
+# Matrix A from 2(a)
+A = np.zeros((3, 3))
+for j in range(1, 4):
+    for k in range(1, 4):
+        A[j-1, k-1] = np.exp(-j * k**2)
+
+# Vector b
+b = np.array([-1, 3, 5], dtype=float)
+
+# First solve for x0
+x0 = np.linalg.solve(A, b)
+
+# Now solve for x1
+x1 = np.linalg.solve(A, x0)
+
+# Now solve for x2
+x2 = np.linalg.solve(A, x1)
+
+print("Final vector x2:")
+print(x2)
